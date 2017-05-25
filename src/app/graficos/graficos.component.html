@@ -1,0 +1,11 @@
+ <div class="botones">
+        <button  md-mini-fab color="primary" (click)="downloadPdf()" type="button">
+          <span class="material-icons">picture_as_pdf</span>
+    </button>
+<div class="pdf" #toPDF>
+  <div class="pdf">
+<p-growl [value]="msgs"></p-growl>
+
+<p-chart type="line" [data]="data" (onDataSelect)="selectData($event)"></p-chart>
+  </div>
+</div>

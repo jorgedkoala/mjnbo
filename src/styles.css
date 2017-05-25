@@ -1,1 +1,57 @@
 /* You can add global styles to this file, and also import other style files */
+.mySpace{
+    height: 30px;
+}
+
+.modulo{
+    position:relative;
+    margin-top: 30px;
+    padding-left:60px;
+    padding-right: 60px;
+}
+
+.logCard{
+    position:relative;
+    margin-left: calc(50% - 150px);
+    margin-right: calc(50% - 150px);
+    width:300px;
+}
+
+
+.logFrame {
+    margin-top: 200px;
+    margin-left: 40px;
+    height: 200px;
+
+}
+
+.logAction{
+    margin-left: 40px;
+}
+
+.formElement{
+    margin-top:40px;
+}
+
+.homeimg{
+  width: 100%;
+  margin-top: -11px;
+  margin-left: 0px;
+}
+.homeimg img{
+  width: 100%;
+}
+.pdf {
+    padding: 25px;
+    background-color: #fff;
+}
+.filtrado{
+    width:900px;
+    height:50px;
+    margin:20px;
+}
+.filtro{
+    margin-left: 30px;
+    float:left
+
+}

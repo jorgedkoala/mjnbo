@@ -1,0 +1,12 @@
+{
+    "home":"home",
+    "calendario":"calendar",
+    "grafico":"graph",
+    "event":{
+        "title":"Title",
+        "intensidad":"Strength",
+        "start":"Date",
+        "end":"End",
+        "color":"Color"
+    }
+}

@@ -1,0 +1,34 @@
+ 
+    <!--<div class="homeimg">
+      <img  [src]="gallery" (error)="logoEmpresa='./assets/images/pixel.png'">
+    </div>-->
+
+    <p-dataTable #dt [value]="events" exportFilename="eventList" [rows]="100" [paginator]="paginator">
+          <p-header color="primary">
+        <div class="ui-helper-clearfix">
+            <!--<button type="button" pButton icon="fa-file-o" iconPos="left" label="CSV" (click)="dt.exportCSV()" style="float:left"></button>-->
+            <button md-raised-button color="primary" (click)="dt.exportCSV()" style="float:left">
+                export
+            </button>
+        </div>
+        <!--<p-calendar [locale]="local" [(ngModel)]="globals.fechas['inicio']" [showIcon]="true"></p-calendar>
+        <p-calendar [locale]="local" [(ngModel)]="globals.fechas['fin']"  [showIcon]="true"></p-calendar>
+         <button color="primary" md-fab (click)="filterDates()"><md-icon>flag</md-icon></button>-->
+        
+    </p-header>
+    <p-footer></p-footer>
+    <!--<p-column *ngFor="let col of cols" [field]="col.field" [header]="col.header"></p-column>-->
+        <p-column field="title" header="{{'event.title' | translate}}"></p-column>
+    <p-column field="intensidad" header="{{'event.intensidad' | translate}}"></p-column>
+    <p-column field="start" header="{{'event.start' | translate}}">
+              <ng-template let-columnaDate let-filaDate="rowData" pTemplate="body">
+        <span >{{filaDate[columnaDate.field] | date: "dd-MM-yyyy HH:mm"}}</span>
+    </ng-template>
+    </p-column>
+    <p-column field="color" header="{{'event.color' | translate}}">
+          <ng-template let-columna let-fila="rowData" let-ri="rowIndex" pTemplate="body">
+        <span [style.color]="fila[columna.field]">{{fila[columna.field]}}</span>
+    </ng-template>
+    </p-column>
+</p-dataTable>
+  

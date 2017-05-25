@@ -1,0 +1,43 @@
+<div class="mySpace"></div>
+
+<!--<div class="logFrame">-->
+
+<md-card class="logCard">
+  <md-card-header color="primary">
+    <!--<div md-card-avatar class="example-header-image"></div>-->
+    <md-toolbar color="primary">Log In</md-toolbar>
+    <!--<md-card-title>Log In</md-card-title>-->
+    <!--<md-card-subtitle>Dog Breed</md-card-subtitle>-->
+  </md-card-header>
+  <md-card-content>
+    <div class="logFrame">
+      <!--<div class="mySpace"></div>-->
+<md-input-container class="formElement">
+  <input mdInput placeholder="login" [(ngModel)]="user">
+</md-input-container>
+<md-input-container >
+  <input mdInput placeholder="Password" type="password" [(ngModel)]="password">
+</md-input-container>
+  <md-select  placeholder="Language" [(ngModel)]="lang" name="lang">
+
+    <md-option *ngFor="let lang of languages" [value]="lang.valor">
+      {{lang.idioma}}
+    </md-option>
+  </md-select>
+    </div>
+  </md-card-content>
+  <md-card-actions>
+    <div class="logAction">
+   <button md-raised-button color="primary" (click)="doLogin()">Login</button>
+    </div>
+  </md-card-actions>
+</md-card>
+
+
+
+<!--  
+    <div class="mySpace"></div>
+
+<br>
+
+</div>-->

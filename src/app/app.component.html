@@ -1,3 +1,28 @@
-<h1>
-  {{title}}
-</h1>
+<md-toolbar color="primary">MJN Epilepsy
+<div class="mySpace"></div>
+    <div class="filtrado" *ngIf="login">
+      <div class="filtro">
+        <p-calendar [locale]="local" [(ngModel)]="globals.fechas['inicio']" ></p-calendar>
+      </div>
+      <div class="filtro">
+        <p-calendar [locale]="local" [(ngModel)]="globals.fechas['fin']"  ></p-calendar>
+      </div>
+      <div class="filtro">
+         <button color="primary" md-mini-fab (click)="setFiltro('ok')"> <span class="material-icons">filter_list</span></button>
+      </div>
+    </div>
+</md-toolbar>
+
+<!--<router-outlet></router-outlet>-->
+<div *ngIf="!login">
+<app-login (logado)="setLogin($event)"></app-login>
+</div>
+
+<div *ngIf="login">
+<md-tab-group [dynamicHeight]="true">
+ <md-tab label="{{'home' | translate}}" ><div  class="modulo"><app-home (filtrado)="setFiltro($event)" [events]="events"></app-home></div></md-tab>
+  <md-tab label="{{'grafico' | translate}}"><div class="modulo"><app-graficos [events]="events"></app-graficos></div></md-tab>
+  <md-tab label="{{'calendar' | translate}}"><div class="modulo"><app-calendar [events]="events"></app-calendar></div></md-tab>
+</md-tab-group>
+</div>
+
