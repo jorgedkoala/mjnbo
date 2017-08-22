@@ -5,5 +5,6 @@ let base = server + 'api/';
 export const URLS = {
   LOGIN: base + 'login.php',
   STD_ITEM: base + 'std_item.php',
-  STD_SUBITEM: base + 'std_subitem.php'
+  STD_SUBITEM: base + 'std_subitem.php',
+  NOTIFICACION: base + 'send_message.php'
 }

@@ -17,6 +17,7 @@ export class AppComponent implements OnInit {
  public local;
  public locale;
 public login:boolean=false;
+public admin:boolean=false;
 public colores:string[]=['black','yellow','orange','red'];
 
   constructor(private translate:TranslateService, private api:ApiService, public globals: GlobalsService){
@@ -26,7 +27,7 @@ public colores:string[]=['black','yellow','orange','red'];
   }
   
 ngOnInit(){
-
+  if (sessionStorage.getItem("uuid")=="admin") this.admin = true;
    switch (localStorage.getItem("idioma")){
      case "es":
             this.local = {
@@ -80,6 +81,7 @@ setFiltro(filtro){
   this.loadEvent();
 }
 loadEvent(){
+  if (sessionStorage.getItem("uuid")=="admin") this.admin = true;
   let fechas = this.globals.getStringFechas();
 console.log("loadEvent;",fechas);
   let param ="entidad=diario&filterdates=true&fecha_inicio="+fechas['inicio']+"&fecha_fin="+fechas['fin']+" 23:59:59&fecha_field=fecha"

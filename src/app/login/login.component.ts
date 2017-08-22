@@ -9,8 +9,8 @@ import {URLS} from '../_models/urls'
 })
 export class LoginComponent implements OnInit {
 @Output() logado: EventEmitter<boolean> = new EventEmitter<boolean>();
-public user:string;//='fda5';
-public password:string;//='2d3c';
+public user:string;//="admin";//='fda5';
+public password:string;//='admin';//='2d3c';
 public lang:string;
 public languages:object[];
 private sub: any;

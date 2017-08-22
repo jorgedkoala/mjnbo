@@ -23,6 +23,8 @@
  <md-tab label="{{'home' | translate}}" ><div  class="modulo"><app-home (filtrado)="setFiltro($event)" [events]="events"></app-home></div></md-tab>
   <md-tab label="{{'grafico' | translate}}"><div class="modulo"><app-graficos [events]="events"></app-graficos></div></md-tab>
   <md-tab label="{{'calendar' | translate}}"><div class="modulo"><app-calendar [events]="events"></app-calendar></div></md-tab>
+  <md-tab label="{{'notificacion' | translate}}" *ngIf="admin"><div class="modulo"><app-notificaciones></app-notificaciones></div></md-tab>
+
 </md-tab-group>
 </div>
 

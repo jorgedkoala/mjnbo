@@ -38,6 +38,7 @@ import { ApiService } from './services/api.service';
 import { GlobalsService } from './services/globals.service';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
+import { NotificacionesComponent } from './notificaciones/notificaciones.component';
 
 @NgModule({
   declarations: [
@@ -45,7 +46,8 @@ import { LoginComponent } from './login/login.component';
     CalendarioComponent,
     GraficosComponent,
     HomeComponent,
-    LoginComponent
+    LoginComponent,
+    NotificacionesComponent
   ],
   imports: [
     BrowserModule,

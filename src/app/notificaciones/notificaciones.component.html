@@ -1,0 +1,37 @@
+<form  #notificationForm="ngForm" (submit)="sendMessage(titleEn.value,messageEn.value,titleEs.value,messageEs.value,titleCa.value,messageCa.value)">
+ <md-input-container class="tituloMensaje">
+    <input mdInput #titleEn maxlength="35" placeholder="English title">
+    <md-hint align="start"><strong></strong> </md-hint>
+    <md-hint align="end">{{titleEn.value.length}} / 35</md-hint>
+  </md-input-container>
+ <md-input-container class="example-full-width">
+    <textarea mdInput #messageEn maxlength="256" placeholder="English message" required name="messageEn"></textarea>
+    <md-hint align="start"><strong></strong> </md-hint>
+    <md-hint align="end">{{messageEn.value.length}} / 256</md-hint>
+  </md-input-container>
+ <md-input-container class="tituloMensaje">
+    <input mdInput #titleEs maxlength="35" placeholder="Título español">
+    <md-hint align="start"><strong></strong> </md-hint>
+    <md-hint align="end">{{titleEs.value.length}} / 35</md-hint>
+  </md-input-container>
+   <md-input-container class="example-full-width">
+    <textarea mdInput #messageEs maxlength="256" placeholder="Mensaje español"></textarea>
+    <md-hint align="start"><strong></strong> </md-hint>
+    <md-hint align="end">{{messageEs.value.length}} / 256</md-hint>
+  </md-input-container>
+ <md-input-container class="tituloMensaje">
+    <input mdInput #titleCa maxlength="35" placeholder="Títol català">
+    <md-hint align="start"><strong></strong> </md-hint>
+    <md-hint align="end">{{titleCa.value.length}} / 35</md-hint>
+  </md-input-container>
+   <md-input-container class="example-full-width">
+    <textarea mdInput #messageCa maxlength="256" placeholder="Missatge català"></textarea>
+    <md-hint align="start"><strong></strong> </md-hint>
+    <md-hint align="end">{{messageCa.value.length}} / 256</md-hint>
+  </md-input-container>
+
+
+            <button [disabled]="!notificationForm.form.valid" md-raised-button color="primary" type="submit" style="float:left">
+                enviar
+            </button>
+</form>
