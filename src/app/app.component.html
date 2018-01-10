@@ -2,10 +2,10 @@
 <div class="mySpace"></div>
     <div class="filtrado" *ngIf="login">
       <div class="filtro">
-        <p-calendar [locale]="local" [(ngModel)]="globals.fechas['inicio']" ></p-calendar>
+        <p-calendar [locale]="local" [(ngModel)]="globals.fechas['inicio']" dateFormat="dd-mm-yy" [inputStyle]="{'width':'140px'}"></p-calendar>
       </div>
       <div class="filtro">
-        <p-calendar [locale]="local" [(ngModel)]="globals.fechas['fin']"  ></p-calendar>
+        <p-calendar [locale]="local" [(ngModel)]="globals.fechas['fin']" dateFormat="dd-mm-yy"  [inputStyle]="{'width':'140px'}"></p-calendar>
       </div>
       <div class="filtro">
          <button color="primary" md-mini-fab (click)="setFiltro('ok')"> <span class="material-icons">filter_list</span></button>
@@ -17,7 +17,11 @@
 <div *ngIf="!login">
 <app-login (logado)="setLogin($event)"></app-login>
 </div>
-
+<div *ngIf="error == 'ERROR'">
+  <md-toolbar color="warn">
+    <span>ERROR ADMINISTRATIVO, CONSULTE A SU ADMINISTRADOR</span>
+  </md-toolbar>
+  </div>
 <div *ngIf="login">
 <md-tab-group [dynamicHeight]="true">
  <md-tab label="{{'home' | translate}}" ><div  class="modulo"><app-home (filtrado)="setFiltro($event)" [events]="events"></app-home></div></md-tab>

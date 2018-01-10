@@ -19,7 +19,7 @@ export class AppComponent implements OnInit {
 public login:boolean=false;
 public admin:boolean=false;
 public colores:string[]=['black','yellow','orange','red'];
-
+public error: string=null;
   constructor(private translate:TranslateService, private api:ApiService, public globals: GlobalsService){
         translate.setDefaultLang('en');
         translate.use('en');
@@ -75,6 +75,19 @@ setLogin(estado:boolean){
 this.login=estado;
 this.globals.setFechas({"inicio":new Date(moment().subtract(8,'w').format('YYYY-MM-DD')),"fin":new Date(moment().format('YYYY-MM-DD'))})
 if (this.login) this.loadEvent();
+let param="";
+try{
+this.api.getObjects(URLS.SEGURIDAD,param).subscribe(
+  (ok)=>{
+    console.log(ok);
+    if (ok.success == "ERROR"){
+      this.error=ok.success;
+    }
+  }
+);
+}catch(e){
+
+}
 }
 setFiltro(filtro){
   //this.globals.fechas=fechas;
